@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "dgSpecHash": "pDME2xfcyfRVdSquBRiaV2H95RmjrGB4eDg2p7SvkOZbcBSw52k7Ro5h/F/qXxr6a0C8uVVcxfyReKFle3hqtA==",
+  "success": false,
+  "projectFilePath": "D:\\tempVisual Studio\\DockAcr\\DockAcr.csproj",
+  "expectedPackageFiles": [],
+  "logs": [
+    {
+      "code": "NU1101",
+      "level": "Error",
+      "message": "Unable to find package Microsoft.VisualStudio.Azure.Containers.Tools.Targets. No packages exist with this id in source(s): C:\\Program Files\\dotnet\\sdk\\7.0.306\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs, Microsoft Visual Studio Offline Packages",
+      "libraryId": "Microsoft.VisualStudio.Azure.Containers.Tools.Targets",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
+}
