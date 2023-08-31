@@ -1,0 +1,38 @@
+name: pushing docker image
+env:
+    ACR_REPO: azureconrege
+
+on:
+    push:
+        branches:
+            - main
+    workflow_dispatch:
+        inputs:
+                customBranch:
+                     description: please enter a branch name
+                     default: main
+                     required: true
+jobs:
+    buildJob:
+        runs-on: ubuntu-latest
+        steps:
+            - name: get the code
+              uses: actions/checkout@v3
+              with:
+                    ref: ${{ github.event.inputs.customBranch }}
+            - name: Setup the environment
+              uses: actions/setup-dotnet@v2
+              with:
+                    dotnet-version: 6.0.x
+            - name: Performing Restore
+              run: dotnet restore
+            - name: Azure login 
+              uses: azure/login@v1
+              with:
+                     creds: ${{ secrets.AZURE_CREDS }}
+            - name: docker build
+              run:  |
+                  docker build -t  ${{ secrets.SER_NAME}}/ ${{ env.ACR_REPO}}:1.0.0 .
+                 
+
+
