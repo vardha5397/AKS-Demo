@@ -32,7 +32,8 @@ jobs:
                      creds: ${{ secrets.AZURE_CREDS }}
             - name: docker build
               run:  |
-                  docker build -t  ${{ secrets.SER_NAME}}/ ${{ env.ACR_REPO}}:1.0.0 .
+                  docker build -t  zohoapp:v1 . 
+                  docker images 
                  
 
 
